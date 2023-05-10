@@ -1,0 +1,46 @@
+package testNgTestCases;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestTask {
+static WebDriver driver;
+	
+	@BeforeTest
+	public void  launchBrowser()
+
+	{
+	WebDriverManager.chromedriver().setup();
+	 driver= new ChromeDriver();
+    driver.get("https://blazedemo.com/");
+    driver.manage().window().maximize();
+	}
+	
+	
+	@Test
+	public void click() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//a[@href='vacation.html']")).click();
+		driver.navigate().back();
+		Thread.sleep(2000);
+		Select se = new Select(driver.findElement(By.name("fromPort")));
+		
+		// Select the option with value "6"
+		se.selectByValue("5");
+	}
+	
+	
+	@AfterTest
+	public void quit()
+	{
+		driver.close();
+	}
+	
+}

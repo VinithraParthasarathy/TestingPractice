@@ -1,0 +1,37 @@
+package practice;
+
+public class arithmetic {
+	
+		public static Void Main(String[] args) {
+
+		//Arithmetic arith = new Arithmetic();
+		//arith.add();
+		//arith.sub();
+		//arith.Divi();
+		//arith.mul();
+
+			int add(){
+			int a = 10, b = 20, add;  
+			add = a + b;  
+			System.out.println("The addition of the given numbers is: "+add);
+			}
+			int sub(){
+		 	int a = 10, b = 20, sub;  
+			sub = a - b;  
+			System.out.println("The subraction of the given numbers is: "+sub);
+			}
+			int mul(){
+			int a = 10, b = 20, mul;  
+			mul = a * b;  
+			System.out.println("The multiplication of the given numbers is: "+mul);
+			}
+			int divi(){
+			int a = 10, b = 20, divi;  
+			divi = a / b;  
+			System.out.println("The division of the given numbers is: "+divi);
+
+		}
+		}
+}
+
+}

@@ -1,0 +1,60 @@
+package testNgTestCases;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestTask {
+static WebDriver driver;
+	
+	@BeforeTest
+	public void  launchBrowser()
+
+	{
+	WebDriverManager.chromedriver().setup();
+	 driver= new ChromeDriver();
+    driver.get("https://blazedemo.com/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	
+	@Test
+	public void click() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//a[@href='vacation.html']")).click();
+		driver.navigate().back();
+		Thread.sleep(2000);
+		{
+			
+		Select se = new Select(driver.findElement(By.xpath("//select[@name='fromPort']")));
+		se.selectByVisibleText("Boston");
+		Thread.sleep(2000);
+		}
+		{
+			Select se = new Select(driver.findElement(By.xpath("//select[@name='toPort']")));
+			se.selectByIndex(2);
+			Thread.sleep(3000);
+		}
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		
+		Thread.sleep(2000);
+		
+	}
+	
+	
+	@AfterTest
+	public void quit()
+	{
+		driver.close();
+	}
+	
+}

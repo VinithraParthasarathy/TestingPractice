@@ -1,0 +1,33 @@
+package practice;
+
+public class arith {
+int a=10, b=20;
+public void Arithmetic()	
+}
+	int add() {
+		int a+b;
+		System.out.println("The addition of the given numbers is: "+ add);
+	}
+	int sub() {
+		int a-b;
+		System.out.println("The subtraction of the given numbers is: "- sub);
+	}
+	int multiply () {
+		int a*b;
+		System.out.println("The multiplication of the given numbers is: "* multiply);
+	}
+	int divi() {
+		int a/b;
+		System.out.println("The division of the given numbers is: "/ divi);
+	}
+	int module () {
+		int a%b;
+		System.out.println("The module of the given numbers is: "%module);
+	}
+	public static void Main (String args[]) {
+	arithmetic f= new arithmetic ();
+	System.out.println("calling the object");
+	f.arithmetic();
+	}
+	
+}

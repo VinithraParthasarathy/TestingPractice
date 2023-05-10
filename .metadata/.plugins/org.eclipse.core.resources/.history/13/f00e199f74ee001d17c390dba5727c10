@@ -1,0 +1,140 @@
+package testNgTestCases;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestTask {
+static WebDriver driver;
+	
+	@BeforeTest
+	public void  launchBrowser()
+
+	{
+	WebDriverManager.chromedriver().setup();
+	 driver= new ChromeDriver();
+    driver.get("https://blazedemo.com/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	
+	@Test
+	public void click() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//a[@href='vacation.html']")).click();
+		driver.navigate().back();
+		Thread.sleep(2000);
+		{
+			
+		Select se = new Select(driver.findElement(By.xpath("//select[@name='fromPort']")));
+		se.selectByVisibleText("Boston");
+		Thread.sleep(2000);
+		}
+		{
+			Select se = new Select(driver.findElement(By.xpath("//select[@name='toPort']")));
+			se.selectByIndex(2);
+			Thread.sleep(2000);
+		}
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		
+		Thread.sleep(2000);
+		
+	
+ List<WebElement> a = driver.findElements(By.xpath("//table[@class='table']//td[6]"));
+ 
+	for(WebElement options : a){
+   	System.out.println(options.getText());
+	}
+
+ int d = a.size();
+System.out.println(d);
+
+{
+
+    // Initializing String
+    String Str = new String("$472.56");
+
+    // Printing original string
+    System.out.print("The original string  is : ");
+    System.out.println(Str);
+
+    // using substring() to extract substring
+    // returns 1000
+    System.out.print("The extracted substring  is : ");
+    System.out.println(Str.substring(1));
+    
+ // Initializing String
+    String Str = new String("$432.98");
+
+    // Printing original string
+    System.out.print("The original string  is : ");
+    System.out.println(Str);
+
+    // using substring() to extract substring
+    // returns 1000
+    System.out.print("The extracted substring  is : ");
+    System.out.println(Str.substring(1));
+    
+    
+ // Initializing String
+    String Str = new String("$200.98");
+
+    // Printing original string
+    System.out.print("The original string  is : ");
+    System.out.println(Str);
+
+    // using substring() to extract substring
+    // returns 1000
+    System.out.print("The extracted substring  is : ");
+    System.out.println(Str.substring(1));
+    
+ // Initializing String
+    String Str = new String("$765.32");
+
+    // Printing original string
+    System.out.print("The original string  is : ");
+    System.out.println(Str);
+
+    // using substring() to extract substring
+    // returns 1000
+    System.out.print("The extracted substring  is : ");
+    System.out.println(Str.substring(1));
+    
+ // Initializing String
+    String Str = new String("$233.98");
+
+    // Printing original string
+    System.out.print("The original string  is : ");
+    System.out.println(Str);
+
+    // using substring() to extract substring
+    // returns 1000
+    System.out.print("The extracted substring  is : ");
+    System.out.println(Str.substring(1));
+}
+//for(int i=0; i<a.size(); i++)
+//{
+//	a.get(i);
+//}
+
+	
+	}
+	@AfterTest
+	public void quit()
+	{
+		driver.close();
+	}
+	
+}
