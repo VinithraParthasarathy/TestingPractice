@@ -18,7 +18,7 @@ public class Script_Int_Practice {         // class class Name
 		System.out.println(d);
 		System.out.println(r);
 		System.out.println(n);
-		System.out.println(s);
+		
 		System.out.println(a - b);
 		System.out.println(a * b);
 		System.out.println(a / b);
@@ -26,7 +26,7 @@ public class Script_Int_Practice {         // class class Name
 		System.out.println(a < b);
 		System.out.println(a > b);
 	}
-	System.out.println("Second commit");
+	
 	
 
 	public static void main(String args[])                       // main method //public static void main (String args[])
