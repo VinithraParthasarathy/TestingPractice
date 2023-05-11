@@ -26,6 +26,8 @@ public class Script_Int_Practice {         // class class Name
 		System.out.println(a < b);
 		System.out.println(a > b);
 	}
+	System.out.println("Second commit");
+	
 
 	public static void main(String args[])                       // main method //public static void main (String args[])
 	{
