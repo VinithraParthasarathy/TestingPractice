@@ -100,4 +100,18 @@
 		<item key="x" value="560"/>
 		<item key="y" value="42"/>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\ADMIN\Desktop\ProjectTask\Cucumber-TestNG"/>
+			<item value="C:\Users\ADMIN\eclipse-workspace\TestNgProj"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 </section>
